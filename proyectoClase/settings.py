@@ -56,7 +56,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # 'DIRS': [ BASE_DIR / "plantillas"],
-        'DIRS': [r'C:\Users\User\Documents\UNLAM\ZCODERHOUSE\Proyecto\proyecto\proyectoClase\plantillas'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
