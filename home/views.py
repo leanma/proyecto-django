@@ -68,4 +68,5 @@ def ver_personas(request):
     return render(request,'home/ver_persona.html',{'personas': personas})
 
 def index(request):
-    return render(request,'home/index.html')
+    fecha_actual=datetime.now()
+    return render(request,'home/index.html',{'fecha_actual':fecha_actual})

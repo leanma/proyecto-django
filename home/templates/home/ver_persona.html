@@ -9,7 +9,7 @@ Ver personas
 {% endblock h1_texto_header %}
 
 {% block mi_contenido %}
-<a class="navbar-brand" href={% url "index"%}>Index</a>
+<a class="navbar-brand" href={% url "index"%}>Volver al Index</a>
 {% for personas in  personas %}
     <li>{{personas.nombre}}  {{personas.apellido}}  {{personas.edad}}</li> 
 {% endfor %}
