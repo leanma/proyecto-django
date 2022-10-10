@@ -11,6 +11,6 @@ urlpatterns = [
     #  path("mi-template/<str:nombre>", views.tu_template,name="mi_template"),
     path("prueba-template/", views.prueba_template),
     path("ver-persona/", views.ver_personas,name="ver_persona"),
-    path("crear-persona/<str:nombre>/<str:apellido>/", views.crear_persona),
+    path("crear-persona/", views.crear_persona, name='crear_persona'),
     path("",views.index, name="index"),
 ]
