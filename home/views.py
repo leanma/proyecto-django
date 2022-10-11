@@ -5,7 +5,11 @@ from django.template import Context, Template,loader
 from django.shortcuts import render, redirect
 import random
 
+from django.urls import is_valid_path
+from home.forms import HumanoFormulario, BusquedaHumanoFormulario
 from home.models import Persona
+
+
 
 def hola(request):
     return HttpResponse("Buenasss")
@@ -51,24 +55,38 @@ def prueba_template(request):
 def crear_persona(request):
     
     if request.method=='POST':
-        nombre=request.POST.get('nombre')
-        apellido=request.POST.get('apellido')
-        persona=Persona(nombre=nombre,apellido=apellido,edad=random.randrange(1,99),fecha_creacion=datetime.now())
-        persona.save()
+        
+        formulario=HumanoFormulario(request.POST)
+        
+        if formulario.is_valid():
+            data = formulario.cleaned_data
+            nombre=data['nombre']
+            apellido=data['apellido']
+            edad=data['edad']
+            fecha_creacion=data.get('fecha_creacion',datetime.now())
+            
+            persona=Persona(nombre=nombre,apellido=apellido,edad=edad,fecha_creacion=fecha_creacion)
+            persona.save()
         
         return redirect('ver_persona')
+    
+    formulario=HumanoFormulario()
 
 
-    return render(request,'home/crear_persona.html',{})
+    return render(request,'home/crear_persona.html',{'formulario':formulario})
 
 def ver_personas(request):
     
-    personas=Persona.objects.all()
-    # template = loader.get_template('ver_persona.html')
-    # template_renderizado=template.render({'personas':personas})   
-    # return HttpResponse(template_renderizado)
+    nombre=request.GET.get('nombre',None)
     
-    return render(request,'home/ver_persona.html',{'personas': personas})
+    if nombre:
+        personas = Persona.objects.filter(nombre__icontains=nombre) 
+    else:
+        personas=Persona.objects.all()
+    
+    formulario=BusquedaHumanoFormulario()
+    
+    return render(request,'home/ver_persona.html',{'personas': personas,'formulario':formulario})
 
 def index(request):
     fecha_actual=datetime.now()

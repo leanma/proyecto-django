@@ -9,8 +9,25 @@ Ver personas
 {% endblock h1_texto_header %}
 
 {% block mi_contenido %}
-<a class="navbar-brand" href={% url "index"%}>Volver al Index</a>
-{% for personas in  personas %}
-    <li>{{personas.nombre}}  {{personas.apellido}}  {{personas.edad}}</li> 
-{% endfor %}
+<a class="navbar-brand" href={% url "crear_persona"%}>Volver a crear persona</a>
+
+
+{% comment %} <form action={% url 'ver_persona' %} method="GET">
+    {{formulario}}
+    <button>Buscar</button>
+</form> {% endcomment %}
+
+
+<p>
+    {% if personas %}
+    {% for personas in  personas %}
+    <li>{{personas.nombre}}  {{personas.apellido}}  {{personas.edad}} {{personas.fecha_creacion}}</li> 
+    {% endfor %}
+   
+    {% else %}
+    <p>
+        No se encontraron resultados!!
+    </p>
+    {% endif %}
+</p>
 {% endblock mi_contenido %}

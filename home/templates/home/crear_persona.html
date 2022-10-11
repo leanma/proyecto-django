@@ -1,3 +1,5 @@
+
+
 {% extends 'home/base.html' %}
 
 {% block title_pagina %}
@@ -8,19 +10,10 @@
 {% block mi_contenido %}
 <form action={% url 'crear_persona' %} method="POST">
     {% csrf_token %}
-    <p>
-        Nombre:
-        <input type="text" name="nombre" placeholder="Nombre">
-    </p>
-
-    <p>
-        <label for="apellido">Apellido</label>
-        <input type="text" name="apellido" placeholder="Apellido">
-    </p>
-    {% comment %} <input type="button" value="Crear"> {% endcomment %}
-    {% comment %} <input type="submit" value="Crear"> {% endcomment %}
+    <tabble>
+        {{formulario}}
+    </tabble>
     <button>Crear</button>
-
 </form>
 {% endblock mi_contenido %}
 
