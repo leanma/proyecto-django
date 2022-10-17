@@ -1,14 +1,12 @@
-
-
 {% extends 'padre/base.html' %}
 
 {% block title_pagina %}
-<title>Crear Persona</title>
+<title>Editar Mascota</title>
 {% endblock title_pagina %}
 
 
 {% block mi_contenido %}
-<form action={% url 'crear_persona' %} method="POST">
+<form action={% url 'editar_mascota' %} method="POST">
     {% csrf_token %}
     <tabble>
         {{formulario}}
@@ -16,9 +14,3 @@
     <button>Crear</button>
 </form>
 {% endblock mi_contenido %}
-
-
-
-
-
-
