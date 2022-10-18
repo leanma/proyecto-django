@@ -9,7 +9,7 @@ Ver mascota
 {% endblock h1_texto_header %}
 
 {% block mi_contenido %}
-<a class="navbar-brand" href={% url "crear_mascota"%}>Volver a crear mascota</a>
+<a class="navbar-brand" href={% url "crear_mascota"%}>Crear mascota</a>
  <p> Listado de Mascotas:</p>
 
 {% comment %} <form action={% url 'ver_persona' %} method="GET">
@@ -21,7 +21,7 @@ Ver mascota
 <p>
     {% if objects_list %}
 
-        {% for mascota in  mascotas %}
+        {% for mascota in  object_list %}
             <li>
                 {{mascota}}
                 <a href={% url 'editar_mascota' mascota.id %}>Editar</a>

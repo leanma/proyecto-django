@@ -1,4 +1,4 @@
-{% extends "padre/base.html"%}
+{% extends "home/index.html"%}
 
 {% block title_pagina %}
 <title>Ver personas</title>
@@ -12,10 +12,10 @@ Ver personas
 <a class="navbar-brand" href={% url "crear_persona"%}>Volver a crear persona</a>
 
 
-{% comment %} <form action={% url 'ver_persona' %} method="GET">
+<form action={% url 'ver_persona' %} method="GET">
     {{formulario}}
     <button>Buscar</button>
-</form> {% endcomment %}
+</form>
 
 
 <p>

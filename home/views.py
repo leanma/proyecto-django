@@ -1,11 +1,9 @@
-from pipes import Template
 from django.http import HttpResponse
 from datetime import datetime
 from django.template import Context, Template,loader
 from django.shortcuts import render, redirect
 import random
 
-from django.urls import is_valid_path
 from home.forms import HumanoFormulario, BusquedaHumanoFormulario
 from home.models import Persona
 

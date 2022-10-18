@@ -6,10 +6,10 @@
 
 
 {% block mi_contenido %}
-<form action={% url 'editar_mascota' %} method="POST">
+<form action={% url 'editar_mascota' mascota.id %} method="POST">
     {% csrf_token %}
     <tabble>
-        {{form}}
+        {{formulario}}
     </tabble>
     <button>Editar</button>
 </form>

@@ -20,6 +20,7 @@ urlpatterns = [
     path('',include('home.urls')),
     path('admin/', admin.site.urls),
     path('avanzado/',include('avanzado.urls')),
+    path('accounts/',include('accounts.urls')),
     # path("hola/", views.hola),
     # path("fecha/", views.fecha),
     # path("fecha-nacimiento/<int:edad>", views.calcular_fecha),
