@@ -19,9 +19,9 @@ Ver mascota
 
 <p>
     {% if mascotas %}
-        {% for mascota in  mascotas %}
+        {% for mascotas in  Mascotas %}
             <li>
-                {{mascota}}
+                {{mascotas}}
                 <a href={% url 'editar_mascota' mascota.id %}>Editar</a>
                 <a href={% url 'eliminar_mascota' mascota.id %}>Eliminar</a>
             </li> 

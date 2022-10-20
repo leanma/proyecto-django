@@ -11,6 +11,6 @@ urlpatterns = [
     #VERSION CON CALSES BASADAS EN VISTAS
     path('mascotas/', views.ListaMascotas.as_view(), name='ver_mascotas'),
     #path('mascotas/crear/', views.CrearMascota.as_view(), name='crear_mascota'),
-    path('mascotas/editar/<int:id>', views.EditarMascota.as_view(), name='editar_mascota'),
-    path('mascotas/eliminar/<int:id>', views.EliminarMascotas.as_view(), name='eliminar_mascota')
+    path('mascotas/editar/<int:pk>', views.EditarMascota.as_view(), name='editar_mascota'),
+    path('mascotas/eliminar/<int:pk>', views.EliminarMascotas.as_view(), name='eliminar_mascota')
 ]

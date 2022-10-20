@@ -1,16 +1,16 @@
 {% extends 'padre/base.html' %}
 
 {% block title_pagina %}
-<title>Crear Mascota</title>
+<title>Editar perfil</title>
 {% endblock title_pagina %}
 
 
 {% block mi_contenido %}
-<form action={% url 'crear_mascota' %} method="POST">
+<form action={% url 'editar_perfil' %} method="POST" enctype='multipart/form-data'>
     {% csrf_token %}
     <table>
         {{formulario}}
     </table>
-    <button>Crear</button>
+    <button>Editar</button>
 </form>
 {% endblock mi_contenido %}

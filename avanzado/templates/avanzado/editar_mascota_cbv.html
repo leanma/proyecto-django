@@ -9,7 +9,7 @@
 <form action={% url 'editar_mascota' mascota.id %} method="POST">
     {% csrf_token %}
     <tabble>
-        {{formulario}}
+        {{form}}
     </tabble>
     <button>Editar</button>
 </form>
